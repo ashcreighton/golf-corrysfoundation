@@ -343,7 +343,8 @@
             <p style="margin: 0;">Interested in sponsoring? <a href="form.html" style="color: #2d80a2; text-decoration: none; font-weight: 600;">Register here</a>, or contact us at <a href="mailto:info@corrysfoundation.org" style="color: #2d80a2; text-decoration: none; font-weight: 600;">info@corrysfoundation.org</a> or <span style="color: #2d80a2; font-weight: 600;">1-866-9-4CORRY</span></p>
           </div>
         </div>
-        <script>
+<!-- Google Sheets script to count availability and keep up to date
+<script>
 const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTeyjGokgjS7TSssiwqwu38ClL58PjTq8cu9iCIDxo8YrYEolhMIQyKamroUuYEAzO9mXQGWQbbFBFx/pub?gid=489173544&single=true&output=csv';
 async function updateAvailability() {
   try {
@@ -385,6 +386,147 @@ async function updateAvailability() {
 }
 updateAvailability();
 </script>
+End -->
+
+<!-- Test out script for sheet counts -->
+
+<script>
+const SHEET_URL =
+  'https://docs.google.com/spreadsheets/d/e/2PACX-1vTeyjGokgjS7TSssiwqwu38ClL58PjTq8cu9iCIDxo8YrYEolhMIQyKamroUuYEAzO9mXQGWQbbFBFx/pub?gid=489173544&single=true&output=csv';
+
+function normalizeName(value) {
+  return String(value ?? '')
+    .replace(/^\uFEFF/, '')       // Remove hidden BOM character
+    .trim()
+    .toLowerCase();
+}
+
+async function updateAvailability() {
+  try {
+    const separator = SHEET_URL.includes('?') ? '&' : '?';
+    const cacheBustURL = `${SHEET_URL}${separator}t=${Date.now()}`;
+
+    const response = await fetch(cacheBustURL, {
+      cache: 'no-store'
+    });
+
+    if (!response.ok) {
+      throw new Error(
+        `Google Sheet request failed: ${response.status} ${response.statusText}`
+      );
+    }
+
+    const csvText = await response.text();
+
+    console.log('Raw CSV received:', csvText);
+
+    if (!csvText.trim()) {
+      throw new Error('The published CSV is empty.');
+    }
+
+    const lines = csvText
+      .trim()
+      .split(/\r?\n/);
+
+    const data = {};
+
+    for (let i = 1; i < lines.length; i++) {
+      const row = lines[i].trim();
+
+      if (!row) continue;
+
+      const columns = row.split(',');
+
+      const sponsorLevel = columns[0]
+        ?.replace(/^"|"$/g, '')
+        .trim();
+
+      const available = columns[1]
+        ?.replace(/^"|"$/g, '')
+        .trim();
+
+      if (!sponsorLevel) continue;
+
+      const key = normalizeName(sponsorLevel);
+
+      if (
+        !available ||
+        available.toLowerCase() === 'unlimited'
+      ) {
+        data[key] = 'unlimited';
+      } else {
+        const number = Number.parseInt(available, 10);
+
+        if (Number.isNaN(number)) {
+          console.warn(
+            `Invalid availability value for "${sponsorLevel}":`,
+            available
+          );
+          continue;
+        }
+
+        data[key] = number;
+      }
+    }
+
+    console.log('Parsed sponsor data:', data);
+
+    document
+      .querySelectorAll('.availability-badge')
+      .forEach((badge) => {
+        const sponsorName = badge.dataset.sponsor;
+        const key = normalizeName(sponsorName);
+        const availableCount = data[key];
+
+        badge.classList.remove(
+          'loaded',
+          'hidden',
+          'sold-out'
+        );
+
+        if (availableCount === undefined) {
+          console.warn(
+            `No spreadsheet match found for "${sponsorName}"`
+          );
+
+          badge.textContent = 'AVAILABILITY UNAVAILABLE';
+          badge.classList.add('loaded', 'sold-out');
+          return;
+        }
+
+        if (availableCount === 'unlimited') {
+          badge.classList.add('hidden');
+          return;
+        }
+
+        if (availableCount > 0) {
+          badge.textContent =
+            `${availableCount} AVAILABLE`;
+
+          badge.classList.add('loaded');
+        } else {
+          badge.textContent = 'SOLD OUT';
+          badge.classList.add('loaded', 'sold-out');
+        }
+      });
+
+  } catch (error) {
+    console.error('Error fetching availability:', error);
+
+    document
+      .querySelectorAll('.availability-badge')
+      .forEach((badge) => {
+        badge.textContent = 'AVAILABILITY UNAVAILABLE';
+        badge.classList.remove('hidden');
+        badge.classList.add('loaded', 'sold-out');
+      });
+  }
+}
+
+updateAvailability();
+</script>
+
+<!-- End -->
       </div>
     </div>
     <div class="w-layout-blockcontainer container-main grey w-container">
