@@ -354,9 +354,12 @@ async function updateAvailability() {
     const lines = csvText.trim().split('\n');
     const data = {};
     for (let i = 1; i < lines.length; i++) {
-      const [sponsor_level, available] = lines[i].split(',');
-      const cleanName = sponsor_level.trim();
-      const rawValue = available ? available.trim() : '';
+      const columns = lines[i].split(',');
+      const sponsor_level = columns[0];
+      const available = columns[3];
+
+  const cleanName = sponsor_level.trim();
+  const rawValue = available ? available.trim() : '';
       if (rawValue === '' || rawValue.toLowerCase() === 'unlimited') {
         data[cleanName] = 'unlimited';
       } else {
@@ -526,7 +529,7 @@ async function updateAvailability() {
 updateAvailability();
 </script>
 
-End -->
+<!-- End -->
       </div>
     </div>
     <div class="w-layout-blockcontainer container-main grey w-container">
