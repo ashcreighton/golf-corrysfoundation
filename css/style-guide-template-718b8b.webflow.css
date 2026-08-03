@@ -9,9 +9,9 @@
   --light-grey-2: #ccc;
   --dark-grey-1: #636363;
   --dark-grey-2: #333;
-  --green: #467235;
   --white: white;
   --black: black;
+  --green: #467235;
 }
 
 .w-layout-blockcontainer {
@@ -842,8 +842,9 @@ figcaption {
 }
 
 .section {
-  background-image: linear-gradient(8deg, var(--green), transparent 58%), url('../images/stonecreek.1.jpg');
+  background-image: linear-gradient(8deg, var(--dark-grey-2), transparent 58%), url('../images/cf-web.jpg');
   background-position: 0 0, 100%;
+  background-repeat: repeat, no-repeat;
   background-size: auto, cover;
   height: 400px;
 }
@@ -869,6 +870,12 @@ figcaption {
   padding-top: 40px;
   padding-bottom: 10px;
   display: flex;
+}
+
+.container-hero.friend-of-corry-hero {
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 21px;
 }
 
 .white {
@@ -1068,6 +1075,22 @@ figcaption {
   width: 180px;
 }
 
+.h1-friend-of-corry {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 3rem;
+}
+
+.body-friend-of-corry {
+  background-color: #eef3f9;
+}
+
+.sec-friend-of-corry {
+  background-color: #fff;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
 @media screen and (max-width: 991px) {
   .button.top-register {
     margin-top: 7px;
@@ -1095,7 +1118,17 @@ figcaption {
     align-items: center;
   }
 
-  .div-block, .container-hero, .container-main {
+  .div-block {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .section {
+    background-position: 0 0, 50%;
+    background-size: auto, auto;
+  }
+
+  .container-hero, .container-main {
     padding-left: 10px;
     padding-right: 10px;
   }
@@ -1110,6 +1143,10 @@ figcaption {
 
   .image-2 {
     width: 140px;
+  }
+
+  .h1-friend-of-corry {
+    font-size: 2.5rem;
   }
 }
 
@@ -1251,6 +1288,12 @@ figcaption {
     align-items: center;
   }
 
+  .section {
+    background-position: 0 0, 54%;
+    background-size: auto, 250%;
+    height: 300px;
+  }
+
   .div-block-2 {
     height: auto;
   }
@@ -1345,6 +1388,10 @@ figcaption {
 
   .image-2 {
     width: 120px;
+  }
+
+  .h1-friend-of-corry {
+    font-size: 1.75rem;
   }
 }
 
