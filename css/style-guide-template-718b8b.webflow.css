@@ -849,6 +849,10 @@ figcaption {
   height: 400px;
 }
 
+.section.main-hero {
+  background-image: linear-gradient(8deg, var(--dark-grey-2), transparent 58%), url('../images/stonecreek.1.jpg');
+}
+
 .div-block-2 {
   flex-flow: column;
   justify-content: space-between;

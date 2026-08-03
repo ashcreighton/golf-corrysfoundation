@@ -1,14 +1,14 @@
-<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Tue Jul 28 2026 01:26:16 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Mon Aug 03 2026 06:43:41 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="6992800315ae5894aec7ce56" data-wf-site="59e7ae7144eccc00014c5c6f">
 <head>
   <meta charset="utf-8">
   <title>Swing for a Cause Golf Tournament • Corry&#x27;s Foundation</title>
-  <meta content="Golf tournament benefiting veterans and children through service dogs. March 1, 2027 at The Wigwam, Litchfield Park. Sponsorship opportunities available." name="description">
+  <meta content="Golf tournament benefiting veterans and children through service dogs. March 20, 2026 at The Wigwam, Litchfield Park. Sponsorship opportunities available." name="description">
   <meta content="Swing for a Cause Golf Tournament • Corry&#x27;s Foundation" property="og:title">
-  <meta content="Golf tournament benefiting veterans and children through service dogs. March 1, 2027 at Stonecreek Golf Club, Phoenix. Sponsorship opportunities available." property="og:description">
-  <meta content="https://cdn.prod.website-files.com/59e7ae7144eccc00014c5c6f/6997726d312c8e5f6ea6716b_swing-og.png" property="og:image">
+  <meta content="Golf tournament benefiting veterans and children through service dogs. March 20, 2026 at The Wigwam, Litchfield Park. Sponsorship opportunities available." property="og:description">
+  <meta content="https://cdn.prod.website-files.com/59e7ae7144eccc00014c5c6f/6997726d312c8e5f6ea6716b_11321099934f9aa8c714a4ada0c9f012_swing-og.png" property="og:image">
   <meta content="Swing for a Cause Golf Tournament • Corry&#x27;s Foundation" name="twitter:title">
-  <meta content="Golf tournament benefiting veterans and children through service dogs. March 1, 2027 at Stonecreek Golf Club, Phoenix. Sponsorship opportunities available." name="twitter:description">
+  <meta content="Golf tournament benefiting veterans and children through service dogs. March 20, 2026 at The Wigwam, Litchfield Park. Sponsorship opportunities available." name="twitter:description">
   <meta property="og:type" content="website">
   <meta content="summary_large_image" name="twitter:card">
   <meta content="width=device-width, initial-scale=1" name="viewport">
@@ -91,7 +91,7 @@
       </div>
     </div>
   </section>
-  <section class="section">
+  <section class="section main-hero">
     <div class="w-layout-blockcontainer container-hero w-container"><img src="images/corry-logo.whiteout.svg" loading="lazy" width="175" height="Auto" alt="">
       <h1 class="swing"><span class="swing-span">Swing for The Paws</span> Golf Tournamen<span>t</span><br></h1>
       <h3 class="h3-hero">March 1, 2027 • Stonecreek Golf Club (Phoenix, AZ)</h3>
@@ -343,9 +343,8 @@
             <p style="margin: 0;">Interested in sponsoring? <a href="form.html" style="color: #2d80a2; text-decoration: none; font-weight: 600;">Register here</a>, or contact us at <a href="mailto:info@corrysfoundation.org" style="color: #2d80a2; text-decoration: none; font-weight: 600;">info@corrysfoundation.org</a> or <span style="color: #2d80a2; font-weight: 600;">1-866-9-4CORRY</span></p>
           </div>
         </div>
-<!-- Google Sheets script to count availability and keep up to date -->
-<script>
-const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTeyjGokgjS7TSssiwqwu38ClL58PjTq8cu9iCIDxo8YrYEolhMIQyKamroUuYEAzO9mXQGWQbbFBFx/pub?gid=489173544&single=true&output=csv';
+        <script>
+const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTRdvnT-yrqNa2sOhyXYSJhigK1DDk_IAOBuHtGGM65NJhkOreBO7_qk0MZ5q2_ih5xJZZvwwqKm4Si/pub?gid=2132622529&single=true&output=csv';
 async function updateAvailability() {
   try {
     const cacheBustURL = SHEET_URL + '&t=' + new Date().getTime();
@@ -354,12 +353,9 @@ async function updateAvailability() {
     const lines = csvText.trim().split('\n');
     const data = {};
     for (let i = 1; i < lines.length; i++) {
-      const columns = lines[i].split(',');
-      const sponsor_level = columns[0];
-      const available = columns[3];
-
-  const cleanName = sponsor_level.trim();
-  const rawValue = available ? available.trim() : '';
+      const [sponsor_level, available] = lines[i].split(',');
+      const cleanName = sponsor_level.trim();
+      const rawValue = available ? available.trim() : '';
       if (rawValue === '' || rawValue.toLowerCase() === 'unlimited') {
         data[cleanName] = 'unlimited';
       } else {
@@ -389,153 +385,12 @@ async function updateAvailability() {
 }
 updateAvailability();
 </script>
-<!-- End -->
-
-<!-- Test out script for sheet counts
-
-<script>
-const SHEET_URL =
-  'https://docs.google.com/spreadsheets/d/e/2PACX-1vTeyjGokgjS7TSssiwqwu38ClL58PjTq8cu9iCIDxo8YrYEolhMIQyKamroUuYEAzO9mXQGWQbbFBFx/pub?gid=489173544&single=true&output=csv';
-
-function normalizeName(value) {
-  return String(value ?? '')
-    .replace(/^\uFEFF/, '')       // Remove hidden BOM character
-    .trim()
-    .toLowerCase();
-}
-
-async function updateAvailability() {
-  try {
-    const separator = SHEET_URL.includes('?') ? '&' : '?';
-    const cacheBustURL = `${SHEET_URL}${separator}t=${Date.now()}`;
-
-    const response = await fetch(cacheBustURL, {
-      cache: 'no-store'
-    });
-
-    if (!response.ok) {
-      throw new Error(
-        `Google Sheet request failed: ${response.status} ${response.statusText}`
-      );
-    }
-
-    const csvText = await response.text();
-
-    console.log('Raw CSV received:', csvText);
-
-    if (!csvText.trim()) {
-      throw new Error('The published CSV is empty.');
-    }
-
-    const lines = csvText
-      .trim()
-      .split(/\r?\n/);
-
-    const data = {};
-
-    for (let i = 1; i < lines.length; i++) {
-      const row = lines[i].trim();
-
-      if (!row) continue;
-
-      const columns = row.split(',');
-
-      const sponsorLevel = columns[0]
-        ?.replace(/^"|"$/g, '')
-        .trim();
-
-      const available = columns[1]
-        ?.replace(/^"|"$/g, '')
-        .trim();
-
-      if (!sponsorLevel) continue;
-
-      const key = normalizeName(sponsorLevel);
-
-      if (
-        !available ||
-        available.toLowerCase() === 'unlimited'
-      ) {
-        data[key] = 'unlimited';
-      } else {
-        const number = Number.parseInt(available, 10);
-
-        if (Number.isNaN(number)) {
-          console.warn(
-            `Invalid availability value for "${sponsorLevel}":`,
-            available
-          );
-          continue;
-        }
-
-        data[key] = number;
-      }
-    }
-
-    console.log('Parsed sponsor data:', data);
-
-    document
-      .querySelectorAll('.availability-badge')
-      .forEach((badge) => {
-        const sponsorName = badge.dataset.sponsor;
-        const key = normalizeName(sponsorName);
-        const availableCount = data[key];
-
-        badge.classList.remove(
-          'loaded',
-          'hidden',
-          'sold-out'
-        );
-
-        if (availableCount === undefined) {
-          console.warn(
-            `No spreadsheet match found for "${sponsorName}"`
-          );
-
-          badge.textContent = 'AVAILABILITY UNAVAILABLE';
-          badge.classList.add('loaded', 'sold-out');
-          return;
-        }
-
-        if (availableCount === 'unlimited') {
-          badge.classList.add('hidden');
-          return;
-        }
-
-        if (availableCount > 0) {
-          badge.textContent =
-            `${availableCount} AVAILABLE`;
-
-          badge.classList.add('loaded');
-        } else {
-          badge.textContent = 'SOLD OUT';
-          badge.classList.add('loaded', 'sold-out');
-        }
-      });
-
-  } catch (error) {
-    console.error('Error fetching availability:', error);
-
-    document
-      .querySelectorAll('.availability-badge')
-      .forEach((badge) => {
-        badge.textContent = 'AVAILABILITY UNAVAILABLE';
-        badge.classList.remove('hidden');
-        badge.classList.add('loaded', 'sold-out');
-      });
-  }
-}
-
-updateAvailability();
-</script>
-
-<!-- End -->
       </div>
     </div>
     <div class="w-layout-blockcontainer container-main grey w-container">
       <h2>Event Details</h2>
       <p class="event-detail-field">Date</p>
-      <p class="event-detail">Monday, March 1, 2027<br></p>
+      <p class="event-detail">Friday, March 1, 2027<br></p>
       <p class="event-detail-field">Time</p>
       <p class="event-detail">Registration begins at 7:00AM • Range opens at 7:30AM • Shotgun start at 8:00AM<br></p>
       <p class="event-detail-field">Location</p>
