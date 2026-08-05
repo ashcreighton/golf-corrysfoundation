@@ -344,7 +344,8 @@
           </div>
         </div>
         <script>
-const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTRdvnT-yrqNa2sOhyXYSJhigK1DDk_IAOBuHtGGM65NJhkOreBO7_qk0MZ5q2_ih5xJZZvwwqKm4Si/pub?gid=2132622529&single=true&output=csv';
+const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTeyjGokgjS7TSssiwqwu38ClL58PjTq8cu9iCIDxo8YrYEolhMIQyKamroUuYEAzO9mXQGWQbbFBFx/pub?gid=489173544&single=true&output=csv';
+
 async function updateAvailability() {
   try {
     const cacheBustURL = SHEET_URL + '&t=' + new Date().getTime();
@@ -352,19 +353,25 @@ async function updateAvailability() {
     const csvText = await response.text();
     const lines = csvText.trim().split('\n');
     const data = {};
+    
     for (let i = 1; i < lines.length; i++) {
-      const [sponsor_level, available] = lines[i].split(',');
-      const cleanName = sponsor_level.trim();
-      const rawValue = available ? available.trim() : '';
-      if (rawValue === '' || rawValue.toLowerCase() === 'unlimited') {
-        data[cleanName] = 'unlimited';
+      const cols = lines[i].split(',');
+      if (cols.length < 2) continue;
+      
+      const sponsor_level = cols[0].trim();
+      const available = cols[3].trim(); // Column D (remaining availability)
+      
+      if (available === '' || available.toLowerCase() === 'unlimited') {
+        data[sponsor_level] = 'unlimited';
       } else {
-        data[cleanName] = parseInt(rawValue);
+        data[sponsor_level] = parseInt(available);
       }
     }
+    
     document.querySelectorAll('.availability-badge').forEach(badge => {
       const sponsorName = badge.getAttribute('data-sponsor');
       const availableCount = data[sponsorName];
+      
       if (availableCount !== undefined) {
         if (availableCount === 'unlimited') {
           badge.classList.add('hidden');
@@ -383,6 +390,7 @@ async function updateAvailability() {
     console.error('Error fetching availability:', error);
   }
 }
+
 updateAvailability();
 </script>
       </div>
