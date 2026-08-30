@@ -121,6 +121,7 @@
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   }
+  
   @media (max-width: 768px) {
     .sponsor-grid {
       gap: 0px !important;
@@ -140,6 +141,7 @@
       font-size: 16px !important;
     }
   }
+  
   .availability-badge {
     background: #c1272d;
     color: white;
@@ -152,219 +154,244 @@
     opacity: 0;
     transition: opacity 0.3s ease;
   }
+  
   .availability-badge.loaded {
     opacity: 1;
   }
+  
   .availability-badge.sold-out {
     background: #6c757d;
   }
+  
   .availability-badge.hidden {
     display: none !important;
   }
 </style>
-        <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 1200px; margin: 0 auto; padding: 20px;">
-          <div class="sponsor-grid" style="display: flex; gap: 20px; flex-wrap: wrap;">
-            <!--  Column 1  -->
-            <div class="sponsor-column" style="flex: 1; min-width: 280px;">
-              <!--  Platinum Sponsorship  -->
-              <a href="form.html" style="text-decoration: none; color: inherit; display: block;">
-                <div class="sponsor-card">
-                  <div style="margin-bottom: 6px;">
-                    <span class="title" style="font-size: 18px; color: #2d80a2; font-weight: 700;">Platinum Sponsorship</span>
-                    <span class="price" style="float: right; font-size: 20px; font-weight: 700;">$12,000</span>
-                  </div>
-                  <div style="clear: both;">
-                    <span class="availability-badge" data-sponsor="Platinum Sponsorship"></span>
-                  </div>
-                  <div style="color: #555; font-size: 13px; line-height: 1.5;">
-                    Foursome Included • Signage on golf carts/registration • Marketing in goodie bags
-                  </div>
-                </div>
-              </a>
-              <!--  Gold Sponsorship  -->
-              <a href="form.html" style="text-decoration: none; color: inherit; display: block;">
-                <div class="sponsor-card">
-                  <div style="margin-bottom: 6px;">
-                    <span class="title" style="font-size: 18px; color: #2d80a2; font-weight: 700;">Gold Sponsorship</span>
-                    <span class="price" style="float: right; font-size: 20px; font-weight: 700;">$6,000</span>
-                  </div>
-                  <div style="clear: both;">
-                    <span class="availability-badge" data-sponsor="Gold Sponsorship"></span>
-                  </div>
-                  <div style="color: #555; font-size: 13px; line-height: 1.5;">
-                    Foursome Included • Signage on golf carts/registration • Marketing in goodie bags
-                  </div>
-                </div>
-              </a>
-              <!--  Associate Sponsorship  -->
-              <a href="form.html" style="text-decoration: none; color: inherit; display: block;">
-                <div class="sponsor-card">
-                  <div style="margin-bottom: 6px;">
-                    <span class="title" style="font-size: 18px; color: #2d80a2; font-weight: 700;">Associate Sponsorship</span>
-                    <span class="price" style="float: right; font-size: 20px; font-weight: 700;">$2,500</span>
-                  </div>
-                  <div style="clear: both;">
-                    <span class="availability-badge" data-sponsor="Associate Sponsorship"></span>
-                  </div>
-                  <div style="color: #555; font-size: 13px; line-height: 1.5;">
-                    Foursome Included • Marketing material in goodie bags
-                  </div>
-                </div>
-              </a>
-              <!--  Hole Sponsorship  -->
-              <a href="form.html" style="text-decoration: none; color: inherit; display: block;">
-                <div class="sponsor-card">
-                  <div style="margin-bottom: 6px;">
-                    <span class="title" style="font-size: 18px; color: #2d80a2; font-weight: 700;">Hole Sponsorship</span>
-                    <span class="price" style="float: right; font-size: 20px; font-weight: 700;">$2,000</span>
-                  </div>
-                  <div style="clear: both;">
-                    <span class="availability-badge" data-sponsor="Hole Sponsorship"></span>
-                  </div>
-                  <div style="color: #555; font-size: 13px; line-height: 1.5;">
-                    Foursome Included • Signage on hole
-                  </div>
-                </div>
-              </a>
-              <!--  Flag Sponsorship  -->
-              <a href="form.html" style="text-decoration: none; color: inherit; display: block;">
-                <div class="sponsor-card">
-                  <div style="margin-bottom: 6px;">
-                    <span class="title" style="font-size: 18px; color: #2d80a2; font-weight: 700;">Flag Sponsorship</span>
-                    <span class="price" style="float: right; font-size: 20px; font-weight: 700;">$2,000</span>
-                  </div>
-                  <div style="clear: both;">
-                    <span class="availability-badge" data-sponsor="Flag Sponsorship"></span>
-                  </div>
-                  <div style="color: #555; font-size: 13px; line-height: 1.5;">
-                    Foursome Included • Logo on flag (9 holes)
-                  </div>
-                </div>
-              </a>
-            </div>
-            <!--  Column 2  -->
-            <div class="sponsor-column" style="flex: 1; min-width: 280px;">
-              <!--  Goodie Bag Sponsorship  -->
-              <a href="form.html" style="text-decoration: none; color: inherit; display: block;">
-                <div class="sponsor-card">
-                  <div style="margin-bottom: 6px;">
-                    <span class="title" style="font-size: 18px; color: #2d80a2; font-weight: 700;">Goodie Bag Sponsorship</span>
-                    <span class="price" style="float: right; font-size: 20px; font-weight: 700;">$1,500</span>
-                  </div>
-                  <div style="clear: both;">
-                    <span class="availability-badge" data-sponsor="Goodie Bag Sponsorship"></span>
-                  </div>
-                  <div style="color: #555; font-size: 13px; line-height: 1.5;">
-                    Logo on drawstring bag
-                  </div>
-                </div>
-              </a>
-              <!--  Lunch Sponsorship  -->
-              <a href="form.html" style="text-decoration: none; color: inherit; display: block;">
-                <div class="sponsor-card">
-                  <div style="margin-bottom: 6px;">
-                    <span class="title" style="font-size: 18px; color: #2d80a2; font-weight: 700;">Lunch Sponsorship</span>
-                    <span class="price" style="float: right; font-size: 20px; font-weight: 700;">$2,000</span>
-                  </div>
-                  <div style="clear: both;">
-                    <span class="availability-badge" data-sponsor="Lunch Sponsorship"></span>
-                  </div>
-                  <div style="color: #555; font-size: 13px; line-height: 1.5;">
-                    Foursome Included • Logo on lunch board with prime viewing
-                  </div>
-                </div>
-              </a>
-              <!--  Breakfast Sponsorship  -->
-              <a href="form.html" style="text-decoration: none; color: inherit; display: block;">
-                <div class="sponsor-card">
-                  <div style="margin-bottom: 6px;">
-                    <span class="title" style="font-size: 18px; color: #2d80a2; font-weight: 700;">Breakfast Sponsorship</span>
-                    <span class="price" style="float: right; font-size: 20px; font-weight: 700;">$1,000</span>
-                  </div>
-                  <div style="clear: both;">
-                    <span class="availability-badge" data-sponsor="Breakfast Sponsorship"></span>
-                  </div>
-                  <div style="color: #555; font-size: 13px; line-height: 1.5;">
-                    Logo on breakfast board with prime viewing
-                  </div>
-                </div>
-              </a>
-              <!--  Drink Sponsorship  -->
-              <a href="form.html" style="text-decoration: none; color: inherit; display: block;">
-                <div class="sponsor-card">
-                  <div style="margin-bottom: 6px;">
-                    <span class="title" style="font-size: 18px; color: #2d80a2; font-weight: 700;">Drink Sponsorship</span>
-                    <span class="price" style="float: right; font-size: 20px; font-weight: 700;">$500</span>
-                  </div>
-                  <div style="clear: both;">
-                    <span class="availability-badge" data-sponsor="Drink Sponsorship"></span>
-                  </div>
-                  <div style="color: #555; font-size: 13px; line-height: 1.5;">
-                    Logo on drink cart
-                  </div>
-                </div>
-              </a>
-            </div>
-            <!--  Column 3  -->
-            <div class="sponsor-column" style="flex: 1; min-width: 280px;">
-              <!--  Awards Sponsorship  -->
-              <a href="form.html" style="text-decoration: none; color: inherit; display: block;">
-                <div class="sponsor-card">
-                  <div style="margin-bottom: 6px;">
-                    <span class="title" style="font-size: 18px; color: #2d80a2; font-weight: 700;">Awards Sponsorship</span>
-                    <span class="price" style="float: right; font-size: 20px; font-weight: 700;">$1,000</span>
-                  </div>
-                  <div style="clear: both;">
-                    <span class="availability-badge" data-sponsor="Awards Sponsorship"></span>
-                  </div>
-                  <div style="color: #555; font-size: 13px; line-height: 1.5;">
-                    Recognition at awards ceremony
-                  </div>
-                </div>
-              </a>
-              <!--  Service Dog Sponsorship  -->
-              <a href="form.html" style="text-decoration: none; color: inherit; display: block;">
-                <div class="sponsor-card">
-                  <div style="margin-bottom: 6px;">
-                    <span class="title" style="font-size: 18px; color: #2d80a2; font-weight: 700;">Service Dog Sponsorship</span>
-                    <span class="price" style="float: right; font-size: 20px; font-weight: 700;">$10,000</span>
-                  </div>
-                  <div style="clear: both;">
-                    <span class="availability-badge" data-sponsor="Service Dog Sponsorship"></span>
-                  </div>
-                  <div style="color: #555; font-size: 13px; line-height: 1.5;">
-                    Foursome Included
-                  </div>
-                </div>
-              </a>
-            </div>
+
+<div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 1200px; margin: 0 auto; padding: 20px;">
+  
+  <div class="sponsor-grid" style="display: flex; gap: 20px; flex-wrap: wrap;">
+    
+    <!-- Column 1 -->
+    <div class="sponsor-column" style="flex: 1; min-width: 280px;">
+      
+      <!-- Platinum Sponsorship -->
+      <a href="/form" style="text-decoration: none; color: inherit; display: block;">
+        <div class="sponsor-card">
+          <div style="margin-bottom: 6px;">
+            <span class="title" style="font-size: 18px; color: #2d80a2; font-weight: 700;">Platinum Sponsorship</span>
+            <span class="price" style="float: right; font-size: 20px; font-weight: 700;">$12,000</span>
           </div>
-          <div style="margin-top: 20px; text-align: center; color: #555; font-size: 15px;">
-            <p style="margin: 0;">Interested in sponsoring? <a href="form.html" style="color: #2d80a2; text-decoration: none; font-weight: 600;">Register here</a>, or contact us at <a href="mailto:info@corrysfoundation.org" style="color: #2d80a2; text-decoration: none; font-weight: 600;">info@corrysfoundation.org</a> or <span style="color: #2d80a2; font-weight: 600;">1-866-9-4CORRY</span></p>
+          <div style="clear: both;">
+            <span class="availability-badge" data-sponsor="Platinum Sponsorship"></span>
+          </div>
+          <div style="color: #555; font-size: 13px; line-height: 1.5;">
+            Foursome Included • Golf cart signage • Goodie bag marketing • Four drink tickets • Two mulligans per player • Arm's length of raffle tickets per player • Free admission to all contests • Breakfast and lunch for all players
           </div>
         </div>
-        <script>
-const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTeyjGokgjS7TSssiwqwu38ClL58PjTq8cu9iCIDxo8YrYEolhMIQyKamroUuYEAzO9mXQGWQbbFBFx/pub?gid=489173544&single=true&output=csv';
+      </a>
+
+      <!-- Gold Sponsorship -->
+      <a href="/form" style="text-decoration: none; color: inherit; display: block;">
+        <div class="sponsor-card">
+          <div style="margin-bottom: 6px;">
+            <span class="title" style="font-size: 18px; color: #2d80a2; font-weight: 700;">Gold Sponsorship</span>
+            <span class="price" style="float: right; font-size: 20px; font-weight: 700;">$6,000</span>
+          </div>
+          <div style="clear: both;">
+            <span class="availability-badge" data-sponsor="Gold Sponsorship"></span>
+          </div>
+          <div style="color: #555; font-size: 13px; line-height: 1.5;">
+            Foursome Included • Golf cart signage • Goodie bag marketing • Breakfast and lunch for all players
+          </div>
+        </div>
+      </a>
+
+      <!-- Associate Sponsorship -->
+      <a href="/form" style="text-decoration: none; color: inherit; display: block;">
+        <div class="sponsor-card">
+          <div style="margin-bottom: 6px;">
+            <span class="title" style="font-size: 18px; color: #2d80a2; font-weight: 700;">Associate Sponsorship</span>
+            <span class="price" style="float: right; font-size: 20px; font-weight: 700;">$2,500</span>
+          </div>
+          <div style="clear: both;">
+            <span class="availability-badge" data-sponsor="Associate Sponsorship"></span>
+          </div>
+          <div style="color: #555; font-size: 13px; line-height: 1.5;">
+            Foursome Included • Goodie bag marketing • Breakfast and lunch for all players
+          </div>
+        </div>
+      </a>
+
+      <!-- Hole Sponsorship -->
+      <a href="/form" style="text-decoration: none; color: inherit; display: block;">
+        <div class="sponsor-card">
+          <div style="margin-bottom: 6px;">
+            <span class="title" style="font-size: 18px; color: #2d80a2; font-weight: 700;">Hole Sponsorship</span>
+            <span class="price" style="float: right; font-size: 20px; font-weight: 700;">$2,000</span>
+          </div>
+          <div style="clear: both;">
+            <span class="availability-badge" data-sponsor="Hole Sponsorship"></span>
+          </div>
+          <div style="color: #555; font-size: 13px; line-height: 1.5;">
+            Foursome Included • Hole signage • Breakfast and lunch for all players
+          </div>
+        </div>
+      </a>
+
+      <!-- Flag Sponsorship -->
+      <a href="/form" style="text-decoration: none; color: inherit; display: block;">
+        <div class="sponsor-card">
+          <div style="margin-bottom: 6px;">
+            <span class="title" style="font-size: 18px; color: #2d80a2; font-weight: 700;">Flag Sponsorship</span>
+            <span class="price" style="float: right; font-size: 20px; font-weight: 700;">$2,000</span>
+          </div>
+          <div style="clear: both;">
+            <span class="availability-badge" data-sponsor="Flag Sponsorship"></span>
+          </div>
+          <div style="color: #555; font-size: 13px; line-height: 1.5;">
+            Foursome Included • Logo on flag (9 holes) • Breakfast and lunch for all players
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- Column 2 -->
+    <div class="sponsor-column" style="flex: 1; min-width: 280px;">
+      
+      <!-- Goodie Bag Sponsorship -->
+      <a href="/form" style="text-decoration: none; color: inherit; display: block;">
+        <div class="sponsor-card">
+          <div style="margin-bottom: 6px;">
+            <span class="title" style="font-size: 18px; color: #2d80a2; font-weight: 700;">Goodie Bag Sponsorship</span>
+            <span class="price" style="float: right; font-size: 20px; font-weight: 700;">$1,500</span>
+          </div>
+          <div style="clear: both;">
+            <span class="availability-badge" data-sponsor="Goodie Bag Sponsorship"></span>
+          </div>
+          <div style="color: #555; font-size: 13px; line-height: 1.5;">
+            Logo on drawstring bag
+          </div>
+        </div>
+      </a>
+
+      <!-- Lunch Sponsorship -->
+      <a href="/form" style="text-decoration: none; color: inherit; display: block;">
+        <div class="sponsor-card">
+          <div style="margin-bottom: 6px;">
+            <span class="title" style="font-size: 18px; color: #2d80a2; font-weight: 700;">Lunch Sponsorship</span>
+            <span class="price" style="float: right; font-size: 20px; font-weight: 700;">$2,000</span>
+          </div>
+          <div style="clear: both;">
+            <span class="availability-badge" data-sponsor="Lunch Sponsorship"></span>
+          </div>
+          <div style="color: #555; font-size: 13px; line-height: 1.5;">
+            Foursome Included • Logo on lunch board (prime viewing) • Breakfast and lunch for all players
+          </div>
+        </div>
+      </a>
+
+      <!-- Breakfast Sponsorship -->
+      <a href="/form" style="text-decoration: none; color: inherit; display: block;">
+        <div class="sponsor-card">
+          <div style="margin-bottom: 6px;">
+            <span class="title" style="font-size: 18px; color: #2d80a2; font-weight: 700;">Breakfast Sponsorship</span>
+            <span class="price" style="float: right; font-size: 20px; font-weight: 700;">$1,000</span>
+          </div>
+          <div style="clear: both;">
+            <span class="availability-badge" data-sponsor="Breakfast Sponsorship"></span>
+          </div>
+          <div style="color: #555; font-size: 13px; line-height: 1.5;">
+            Logo on breakfast board (prime viewing)
+          </div>
+        </div>
+      </a>
+
+      <!-- Drink Sponsorship -->
+      <a href="/form" style="text-decoration: none; color: inherit; display: block;">
+        <div class="sponsor-card">
+          <div style="margin-bottom: 6px;">
+            <span class="title" style="font-size: 18px; color: #2d80a2; font-weight: 700;">Drink Sponsorship</span>
+            <span class="price" style="float: right; font-size: 20px; font-weight: 700;">$500</span>
+          </div>
+          <div style="clear: both;">
+            <span class="availability-badge" data-sponsor="Drink Sponsorship"></span>
+          </div>
+          <div style="color: #555; font-size: 13px; line-height: 1.5;">
+            Logo on drink cart
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- Column 3 -->
+    <div class="sponsor-column" style="flex: 1; min-width: 280px;">
+      
+      <!-- Awards Sponsorship -->
+      <a href="/form" style="text-decoration: none; color: inherit; display: block;">
+        <div class="sponsor-card">
+          <div style="margin-bottom: 6px;">
+            <span class="title" style="font-size: 18px; color: #2d80a2; font-weight: 700;">Awards Sponsorship</span>
+            <span class="price" style="float: right; font-size: 20px; font-weight: 700;">$1,000</span>
+          </div>
+          <div style="clear: both;">
+            <span class="availability-badge" data-sponsor="Awards Sponsorship"></span>
+          </div>
+          <div style="color: #555; font-size: 13px; line-height: 1.5;">
+            Awards ceremony recognition
+          </div>
+        </div>
+      </a>
+
+      <!-- Service Dog Sponsorship -->
+      <a href="/form" style="text-decoration: none; color: inherit; display: block;">
+        <div class="sponsor-card">
+          <div style="margin-bottom: 6px;">
+            <span class="title" style="font-size: 18px; color: #2d80a2; font-weight: 700;">Service Dog Sponsorship</span>
+            <span class="price" style="float: right; font-size: 20px; font-weight: 700;">$10,000</span>
+          </div>
+          <div style="clear: both;">
+            <span class="availability-badge" data-sponsor="Service Dog Sponsorship"></span>
+          </div>
+          <div style="color: #555; font-size: 13px; line-height: 1.5;">
+            Foursome Included • Breakfast and lunch for all players
+          </div>
+        </div>
+      </a>
+
+    </div>
+    
+  </div>
+
+  <div style="margin-top: 20px; text-align: center; color: #555; font-size: 15px;">
+    <p style="margin: 0;">Interested in sponsoring? <a href="/form" style="color: #2d80a2; text-decoration: none; font-weight: 600;">Register here</a>, or contact us at <a href="mailto:info@corrysfoundation.org" style="color: #2d80a2; text-decoration: none; font-weight: 600;">info@corrysfoundation.org</a> or <span style="color: #2d80a2; font-weight: 600;">1-866-9-4CORRY</span></p>
+  </div>
+
+</div>
+
+<script>
+const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTRdvnT-yrqNa2sOhyXYSJhigK1DDk_IAOBuHtGGM65NJhkOreBO7_qk0MZ5q2_ih5xJZZvwwqKm4Si/pub?gid=2132622529&single=true&output=csv';
 
 async function updateAvailability() {
   try {
     const cacheBustURL = SHEET_URL + '&t=' + new Date().getTime();
     const response = await fetch(cacheBustURL);
     const csvText = await response.text();
+    
     const lines = csvText.trim().split('\n');
     const data = {};
     
     for (let i = 1; i < lines.length; i++) {
-      const cols = lines[i].split(',');
-      if (cols.length < 2) continue;
+      const [sponsor_level, available] = lines[i].split(',');
+      const cleanName = sponsor_level.trim();
+      const rawValue = available ? available.trim() : '';
       
-      const sponsor_level = cols[0].trim();
-      const available = cols[3].trim(); // Column D (remaining availability)
-      
-      if (available === '' || available.toLowerCase() === 'unlimited') {
-        data[sponsor_level] = 'unlimited';
+      if (rawValue === '' || rawValue.toLowerCase() === 'unlimited') {
+        data[cleanName] = 'unlimited';
       } else {
-        data[sponsor_level] = parseInt(available);
+        data[cleanName] = parseInt(rawValue);
       }
     }
     
@@ -386,6 +413,7 @@ async function updateAvailability() {
         }
       }
     });
+    
   } catch (error) {
     console.error('Error fetching availability:', error);
   }
