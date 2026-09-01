@@ -384,16 +384,16 @@ async function updateAvailability() {
     const data = {};
     
     for (let i = 1; i < lines.length; i++) {
-      const cols = lines[i].split(',');
-      const sponsorName = cols[0].trim();
-      const available = cols[3].trim();
-      
-      if (rawValue === '' || rawValue.toLowerCase() === 'unlimited') {
-        data[cleanName] = 'unlimited';
-      } else {
-        data[cleanName] = parseInt(rawValue);
-      }
-    }
+  const [sponsor_level, available] = lines[i].split(',');
+  const cleanName = sponsor_level.trim();
+  const rawValue = available ? available.trim() : '';
+  
+  if (rawValue === '' || rawValue.toLowerCase() === 'unlimited') {
+    data[cleanName] = 'unlimited';
+  } else {
+    data[cleanName] = parseInt(rawValue);
+  }
+}
     
     document.querySelectorAll('.availability-badge').forEach(badge => {
       const sponsorName = badge.getAttribute('data-sponsor');
