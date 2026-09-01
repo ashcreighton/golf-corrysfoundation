@@ -123,18 +123,18 @@
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   }
 
-  .sponsor-grid {
+  .sponsor-cards-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     align-items: stretch;
   }
-  .sponsor-grid > a {
+  .sponsor-cards-grid > a {
     height: 100%;
   }
 
   @media (max-width: 768px) {
-    .sponsor-grid {
+    .sponsor-cards-grid {
       grid-template-columns: 1fr !important;
       gap: 12px !important;
     }
@@ -177,7 +177,7 @@
 
 <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 1200px; margin: 0 auto; padding: 20px;">
 
-  <div class="sponsor-grid">
+  <div class="sponsor-cards-grid">
 
     <!-- Row 1: the three longest descriptions, grouped so the row is tall but even -->
     <a href="/form" style="text-decoration: none; color: inherit; display: block;">
